@@ -47,6 +47,10 @@ public final class R {
         public static final int app_name=0x7f060000;
         public static final int hello_world=0x7f060001;
         public static final int hellomoon_description=0x7f060005;
+<<<<<<< HEAD
+=======
+        public static final int hellomoon_image_description=0x7f060006;
+>>>>>>> 0febcf815af8a2bb4b7ad8b5a287b469ba68a085
         public static final int hellomoon_play=0x7f060003;
         public static final int hellomoon_stop=0x7f060004;
     }
