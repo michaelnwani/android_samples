@@ -23,6 +23,7 @@ implements CrimeListFragment.Callbacks, CrimeFragment.Callbacks{
 		return R.layout.activity_masterdetail;
 	}
 	
+	
 	public void onCrimeSelected(Crime crime)
 	{
 		if (findViewById(R.id.detailFragmentContainer) == null)
