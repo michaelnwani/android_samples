@@ -18,6 +18,9 @@ import android.util.Log;
 public class FlickrFetchr {
 	public static final String TAG = "FlickrFetchr";
 	
+	public static final String PREF_SEARCH_QUERY = "searchQuery";
+	public static final String PREF_LAST_RESULT_ID = "lastResultId";
+	
 	private static final String ENDPOINT = "https://api.flickr.com/services/rest/";
 	private static final String API_KEY = "0cbcb0c378b8d5dd3b43be5b6c0232ed";
 	private static final String METHOD_GET_RECENT = "flickr.photos.getRecent";
@@ -131,11 +134,13 @@ public class FlickrFetchr {
 				String id = parser.getAttributeValue(null, "id");
 				String caption = parser.getAttributeValue(null, "title");
 				String smallUrl = parser.getAttributeValue(null, EXTRA_SMALL_URL);
+				String owner = parser.getAttributeValue(null, "owner");
 				
 				GalleryItem item = new GalleryItem();
 				item.setId(id);
 				item.setCaption(caption);
 				item.setUrl(smallUrl);
+				item.setOwner(owner);
 				items.add(item);
 				
 				
