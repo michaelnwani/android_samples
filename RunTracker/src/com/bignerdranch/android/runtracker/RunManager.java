@@ -8,6 +8,9 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.util.Log;
 
+import com.bignerdranch.android.runtracker.RunDatabaseHelper.LocationCursor;
+import com.bignerdranch.android.runtracker.RunDatabaseHelper.RunCursor;
+
 public class RunManager {
 	private static final String TAG = "RunManager";
 	
@@ -124,6 +127,11 @@ public class RunManager {
 		return run;
 	}
 	
+	public RunCursor queryRuns()
+	{
+		return mHelper.queryRuns();
+	}
+	
 	public void insertLocation(Location loc)
 	{
 		if (mCurrentRunId != -1)
@@ -134,5 +142,35 @@ public class RunManager {
 		{
 			Log.e(TAG, "Location received with no tracking run; ignoring.");
 		}
+	}
+	
+	public Run getRun(long id)
+	{
+		Run run = null;
+		RunCursor cursor = mHelper.queryRun(id);
+		cursor.moveToFirst();
+		//If you got a row, get a run
+		if (!cursor.isAfterLast())
+		{
+			run = cursor.getRun();
+		}
+		cursor.close();
+		return run;
+	}
+	
+	public boolean isTrackingRun(Run run)
+	{
+		return run != null && run.getId() == mCurrentRunId;
+	}
+	
+	public Location getLastLocationForRun(long runId)
+	{
+		Location location = null;
+		LocationCursor cursor = mHelper.queryLastLocationForRun(runId);
+		cursor.moveToFirst();
+		//If you got a row, get a location
+		if (!cursor.isAfterLast()) location = cursor.getLocation();
+		cursor.close();
+		return location;
 	}
 }
