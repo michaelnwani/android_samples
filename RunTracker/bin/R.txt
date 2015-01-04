@@ -97,7 +97,7 @@ int drawable ic_plusone_standard_off_client 0x7f02001d
 int drawable ic_plusone_tall_off_client 0x7f02001e
 int drawable powered_by_google_dark 0x7f02001f
 int drawable powered_by_google_light 0x7f020020
-int id action_settings 0x7f0b001f
+int id action_settings 0x7f0b0020
 int id adjust_height 0x7f0b0000
 int id adjust_width 0x7f0b0001
 int id book_now 0x7f0b0010
@@ -112,7 +112,7 @@ int id holo_dark 0x7f0b0007
 int id holo_light 0x7f0b0008
 int id hybrid 0x7f0b0003
 int id match_parent 0x7f0b000e
-int id menu_item_new_run 0x7f0b0020
+int id menu_item_new_run 0x7f0b0021
 int id monochrome 0x7f0b0016
 int id none 0x7f0b0002
 int id normal 0x7f0b0004
@@ -121,6 +121,7 @@ int id run_altitudeTextView 0x7f0b001b
 int id run_durationTextView 0x7f0b001c
 int id run_latitudeTextView 0x7f0b0019
 int id run_longitudeTextView 0x7f0b001a
+int id run_mapButton 0x7f0b001f
 int id run_startButton 0x7f0b001d
 int id run_startedTextView 0x7f0b0018
 int id run_stopButton 0x7f0b001e
@@ -179,7 +180,12 @@ int string gps_enabled 0x7f06002d
 int string hello_world 0x7f060024
 int string latitude 0x7f060027
 int string longitude 0x7f060028
+int string map 0x7f060031
 int string new_run 0x7f060030
+int string run_finish 0x7f060034
+int string run_finished_at_format 0x7f060035
+int string run_start 0x7f060032
+int string run_started_at_format 0x7f060033
 int string start 0x7f06002b
 int string started 0x7f060026
 int string stop 0x7f06002c
